@@ -20,17 +20,17 @@ const Navbar = () => {
 
             {/* Right Section */}
             <div className="flex items-center space-x-8">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white">
-                <img src="/icons/linkedin.png" alt="LinkedIn" className="w-6 h-6" />
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white">
+                <img src="/icons/linkedin.png" alt="LinkedIn" className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white">
-                <img src="/icons/instagram.png" alt="Instagram" className="w-6 h-6" />
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white">
+                <img src="/icons/instagram.png" alt="Instagram" className="w-5 h-5" />
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white">
-                <img src="/icons/facebook.png" alt="Facebook" className="w-6 h-6" />
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white">
+                <img src="/icons/facebook.png" alt="Facebook" className="w-5 h-5" />
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white">
-                <img src="/icons/twitter.png" alt="Twitter" className="w-6 h-6" />
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white">
+                <img src="/icons/twitter.png" alt="Twitter" className="w-5 h-5" />
               </a>
             </div>
 
