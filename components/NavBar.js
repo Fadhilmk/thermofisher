@@ -47,7 +47,7 @@ const Navbar = () => {
       </nav>
 
       {/* Non-Sticky Navbar */}
-      <nav className="bg-white py-4 text-black">
+      <nav className="bg-white border border-gray-300 py-4 text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Left Section for Logo */}
@@ -68,15 +68,21 @@ const Navbar = () => {
               placeholder="Search..." 
               className="w-50 sm:w-48 px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-gray-300"
             />
-            <button className="px-4 py-2 bg-red-600 text-white rounded-md ml-1">
-              Search
+            <button className="px-2 ml-1 py-2 border border-gray-300 rounded-md">
+            <Image
+              src='/icons/search.png'
+              alt="Logo"
+              width={30}
+              height={30}
+              className="object-contain"
+            />
             </button>
           </div>
 
           {/* Right Section for Nav Links */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
-            <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline ">Products</Link>
+            <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline">Products</Link>
             <Link href="/about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
             <Link href="/contact" className="text-gray-700 hover:text-red-600 no-underline ">Contact Us</Link>
           </div>

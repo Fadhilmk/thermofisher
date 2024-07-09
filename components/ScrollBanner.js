@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './style.css'
 
 const ScrollBanner = () => {
   const images = [
@@ -19,7 +20,7 @@ const ScrollBanner = () => {
 
   return (
     <>
-      <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel id='carousel' activeIndex={index} onSelect={handleSelect}>
         {images.map((item) => (
           <Carousel.Item key={item.id} interval={4000}>
             <img src={item.imageUrl} alt={`Slide ${item.id}`} className="d-block w-100" />
