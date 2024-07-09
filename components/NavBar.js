@@ -56,13 +56,16 @@ const Navbar = () => {
             </div>
 
             {/* Center Section for Search Bar */}
-            <div className="flex-grow mx-4">
-              <input 
-                type="text" 
-                placeholder="Search..." 
-                className="center px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-gray-300"
-                />
-            </div>
+            <div className="flex-grow mx-8 flex">
+            <input 
+              type="text" 
+              placeholder="Search..." 
+              className="w-48 center px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-gray-300 flex-grow"/>
+            <button className="px-4 py-2 bg-red-600 text-white rounded-md ml-1">
+              Search
+            </button>
+          </div>
+
 
             {/* Right Section (Empty for now) */}
             <div className="flex items-center space-x-4"></div>
