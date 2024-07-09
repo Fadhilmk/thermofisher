@@ -1,8 +1,14 @@
 // components/Navbar.js
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <>
       {/* Sticky Navbar */}
@@ -42,36 +48,58 @@ const Navbar = () => {
 
       {/* Non-Sticky Navbar */}
       <nav className="bg-white py-4 text-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Left Section for Logo */}
-            <div className="flex items-center space-x-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          {/* Left Section for Logo */}
+          <div className="flex items-center space-x-4">
             <Image
               src="/icons/ThermoFisher.png"
               alt="Logo"
-              width={120}  // width in pixels
-              height={57} // height in pixels
+              width={120}
+              height={57}
               className="object-contain"
-            />            
-            </div>
+            />
+          </div>
 
-            {/* Center Section for Search Bar */}
-            <div className="flex-grow mx-8 flex">
+          {/* Center Section for Search Bar */}
+          <div className="flex-grow mx-8 flex">
             <input 
               type="text" 
               placeholder="Search..." 
-              className="w-48 center px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-gray-300 flex-grow"/>
+              className="w-50 sm:w-48 px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-gray-300"
+            />
             <button className="px-4 py-2 bg-red-600 text-white rounded-md ml-1">
               Search
             </button>
           </div>
 
+          {/* Right Section for Nav Links */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
+            <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline ">Products</Link>
+            <Link href="/about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
+            <Link href="/contact" className="text-gray-700 hover:text-red-600 no-underline ">Contact Us</Link>
+          </div>
 
-            {/* Right Section (Empty for now) */}
-            <div className="flex items-center space-x-4"></div>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button onClick={toggleMenu} className="text-gray-700 focus:outline-none">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
+              </svg>
+            </button>
           </div>
         </div>
-      </nav>
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden flex flex-col space-y-4 mt-4 transition-all duration-1000 ${isOpen ? 'opacity-100 max-h-full' : 'opacity-0 max-h-0 overflow-hidden'}`}>
+          <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
+          <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline ">Products</Link>
+          <Link href="/about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
+          <Link href="/contact" className="text-gray-700 hover:text-gray-900 no-underline hover:font-semibold">Contact Us</Link>
+        </div>
+      </div>
+    </nav>
     </>
   );
 };

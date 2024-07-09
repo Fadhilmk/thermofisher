@@ -58,7 +58,7 @@ const ProductList = () => {
             <p className="text-gray-700 mb-4">{product.catNumber}</p>
             <p className="text-gray-700 mb-4">{product.price}</p>
             <button 
-              className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors duration-200"
+              className="w-full bg-red-500 text-white py-2 rounded-md hover:bg-red-600 transition-colors duration-200"
               onClick={() => handleProductClick(product.id, product.image)}
             >
               Buy Now

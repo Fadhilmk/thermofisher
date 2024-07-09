@@ -6,14 +6,14 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 const ProductDetails = () => {
-  const router = useRouter();
-  const { id, image } = router;
-  console.log(router)
+  // const router = useRouter();
+  // const { id, image } = router;
+  // console.log(router)
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold mb-8">Product Details</h1>
-      {id && image ? (
+      {/* {id && image ? (
         <div className="flex flex-col md:flex-row items-center md:items-start">
           <div className="w-full md:w-1/2 flex justify-center mb-4 md:mb-0">
             <Image 
@@ -31,7 +31,7 @@ const ProductDetails = () => {
         </div>
       ) : (
         <p>Loading...</p>
-      )}
+      )} */}
     </div>
   );
 };
