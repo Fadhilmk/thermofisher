@@ -67,7 +67,7 @@ const Navbar = () => {
               type="text" 
               placeholder="Search..." 
               className="w-50 sm:w-48 px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-gray-300"
-            />
+            />g
             <button className="px-2 ml-1 py-2 border border-gray-300 rounded-md">
             <Image
               src='/icons/search.png'
@@ -83,8 +83,8 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
             <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline">Products</Link>
-            <Link href="" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
-            <Link href="" className="text-gray-700 hover:text-red-600 no-underline ">Contact Us</Link>
+            <Link href="/#about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
+            <Link href="/#contact" className="text-gray-700 hover:text-red-600 no-underline ">Contact Us</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -101,8 +101,8 @@ const Navbar = () => {
         <div className={`md:hidden flex flex-col space-y-4 mt-4 transition-all duration-1000 ${isOpen ? 'opacity-100 max-h-full' : 'opacity-0 max-h-0 overflow-hidden'}`}>
           <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
           <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline ">Products</Link>
-          <Link href="/about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
-          <Link href="/contact" className="text-gray-700 hover:text-gray-900 no-underline hover:font-semibold">Contact Us</Link>
+          <Link href="/#about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
+          <Link href="/#contact" className="text-gray-700 hover:text-gray-900 no-underline hover:font-semibold">Contact Us</Link>
         </div>
       </div>
     </nav>

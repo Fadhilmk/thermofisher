@@ -1,9 +1,8 @@
-// components/AboutUs.jsx
 import Image from 'next/image';
 
 const AboutUs = () => {
   return (
-    <div className="container mt-20 mx-auto px-4 py-12">
+    <div id='about' className="container mt-20 mx-auto px-4 py-12">
       <h1 className="text-4xl text-center text-red-500 font-bold mb-8">ABOUT US</h1>
       <div className="flex flex-col mt-20 lg:flex-row items-center lg:items-start">
 

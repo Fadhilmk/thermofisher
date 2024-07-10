@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const ContactUs = () => {
   return (
-    <div className="relative bg-gray-100">
+    <div id='contact' className="relative bg-gray-100">
       <div className="absolute inset-0">
         <Image
           src="/icons/contact.png"
