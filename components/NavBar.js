@@ -83,8 +83,8 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
             <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline">Products</Link>
-            <Link href="/about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
-            <Link href="/contact" className="text-gray-700 hover:text-red-600 no-underline ">Contact Us</Link>
+            <Link href="" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
+            <Link href="" className="text-gray-700 hover:text-red-600 no-underline ">Contact Us</Link>
           </div>
 
           {/* Mobile Menu Button */}
