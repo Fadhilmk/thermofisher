@@ -49,7 +49,7 @@ const Navbar = () => {
       {/* Non-Sticky Navbar */}
       <nav className="bg-white border border-gray-300 py-4 text-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div id='responsive-nav' className="flex justify-between items-center h-16">
           {/* Left Section for Logo */}
           <div className="flex items-center space-x-4">
             <Image

@@ -1,9 +1,26 @@
 #carousel img{
-    height: 500px;
+    height: 600px;
 }
-
+#responsive-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form-response{
+    width: 100%;
+    padding: 35px;
+}
 @media (max-width: 768px) {
     #carousel img{
       height: 300px;
     }
+    /* #responsive-nav{
+        display: block;
+        justify-content: center;
+        align-items: center;
+    } */
+     #form-response{
+        width: 70%;
+        padding: 15px;
+     }
   }

@@ -4,6 +4,7 @@ import { products } from '@/Datas/product';
 import Navbar from '@/components/NavBar';
 import { useParams } from 'next/navigation';
 import React, { useState } from 'react';
+import '../../../components/style.css'
 
 export default function Page() {
   const { productId } = useParams();
@@ -45,7 +46,7 @@ export default function Page() {
 
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-8 rounded shadow-lg w-full max-w-md">
+          <div id='form-response' className="bg-white rounded shadow-lg max-w-md">
             <h2 className="text-2xl font-bold mb-4">Request a Quote</h2>
             <form>
               <div className="mb-4">
