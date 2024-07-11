@@ -19,7 +19,7 @@ const ContactUs = () => {
           <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
             <h1 className="text-3xl text-center font-bold mb-4">Contact Us</h1>
             <p className="mb-4">
-              We'd love to hear from you! Please fill out the form on the right to get in touch with us.
+              We&aposd love to hear from you! Please fill out the form on the right to get in touch with us.
             </p>
             <p className="mb-4">
               Address: 1234 Street Name, City, State, ZIP

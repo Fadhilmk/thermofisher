@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { products } from '@/Datas/product';
 import Navbar from '@/components/NavBar';
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
   return (
     <>
