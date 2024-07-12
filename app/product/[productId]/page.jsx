@@ -4,7 +4,6 @@ import { products } from '@/Datas/product';
 import Navbar from '@/components/NavBar';
 import { useParams } from 'next/navigation';
 import React, { useState } from 'react';
-import '../../../components/style.css'
 
 export default function Page() {
   const { productId } = useParams();

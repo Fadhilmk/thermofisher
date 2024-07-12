@@ -31,7 +31,7 @@ const ContactUs = () => {
               Email: contact@example.com
             </p>
           </div>
-          <div className="w-full lg:w-1/2 lg:p-8 shadow-lg border border-gray-300">
+          <div className="w-full lg:w-1/2 lg:p-8 shadow-lg border border-gray-300 p-8">
             <form className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>

@@ -23,7 +23,7 @@ const ScrollBanner = () => {
       <Carousel id='carousel' activeIndex={index} onSelect={handleSelect}>
         {images.map((item) => (
           <Carousel.Item key={item.id} interval={4000}>
-            <img src={item.imageUrl} alt={`Slide ${item.id}`} className="d-block w-100" />
+            <img src={item.imageUrl} alt={`Slide ${item.id}`} className="d-block w-100 border-bottom border-black-300" />
             <Carousel.Caption>
               {/* <p>{item.title}</p>
               <p>{item.body}</p>

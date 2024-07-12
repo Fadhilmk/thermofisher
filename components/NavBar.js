@@ -1,11 +1,11 @@
 // components/Navbar.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import '../components/style.css'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -47,9 +47,9 @@ const Navbar = () => {
       </nav>
 
       {/* Non-Sticky Navbar */}
-      <nav className="bg-white border border-gray-300 py-4 text-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div id='responsive-nav' className="flex justify-between items-center h-16">
+      <nav id='responsibelNonStickyNavbar' className="bg-white border border-gray-300 py-4 text-black">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           {/* Left Section for Logo */}
           <div className="flex items-center space-x-4">
             <Image
@@ -62,29 +62,30 @@ const Navbar = () => {
           </div>
 
           {/* Center Section for Search Bar */}
-          <div className="flex-grow mx-8 flex">
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              className="w-50 sm:w-48 px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-gray-300"
+          <div className="search-container">
+            <input
+              type="text"
+              placeholder="Search..."
+              id='resSearchBar'
+              className="py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-gray-300"
             />
             <button className="px-2 ml-1 py-2 border border-gray-300 rounded-md">
-            <Image
-              src='/icons/search.png'
-              alt="Logo"
-              width={30}
-              height={30}
-              className="object-contain"
-            />
+              <Image
+                src="/icons/search.png"
+                alt="Search"
+                width={30}
+                height={30}
+                className="object-contain"
+              />
             </button>
           </div>
 
           {/* Right Section for Nav Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
+            <Link href="/" className="text-gray-700 hover:text-red-600 no-underline">Home</Link>
             <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline">Products</Link>
-            <Link href="" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
-            <Link href="" className="text-gray-700 hover:text-red-600 no-underline ">Contact Us</Link>
+            <Link href="" className="text-gray-700 hover:text-red-600 no-underline">About Us</Link>
+            <Link href="" className="text-gray-700 hover:text-red-600 no-underline">Contact Us</Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,13 +100,14 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div className={`md:hidden flex flex-col space-y-4 mt-4 transition-all duration-1000 ${isOpen ? 'opacity-100 max-h-full' : 'opacity-0 max-h-0 overflow-hidden'}`}>
-          <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
-          <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline ">Products</Link>
-          <Link href="/about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
+          <Link href="/" className="text-gray-700 hover:text-red-600 no-underline">Home</Link>
+          <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline">Products</Link>
+          <Link href="/about" className="text-gray-700 hover:text-red-600 no-underline">About Us</Link>
           <Link href="/contact" className="text-gray-700 hover:text-gray-900 no-underline hover:font-semibold">Contact Us</Link>
         </div>
       </div>
-    </nav>
+
+      </nav>
     </>
   );
 };
