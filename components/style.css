@@ -10,17 +10,59 @@
     width: 100%;
     padding: 35px;
 }
+.logosize{
+    width: 100px;
+    height: 50px;
+}
+
 @media (max-width: 768px) {
     #carousel img{
       height: 300px;
     }
-    /* #responsive-nav{
-        display: block;
-        justify-content: center;
-        align-items: center;
-    } */
-     #form-response{
+    #form-response{
         width: 70%;
         padding: 15px;
-     }
-  }
+    }
+}
+
+/* Add to your CSS file or global styles */
+.search-container {
+    flex-grow: 1; /* flex-grow */
+    margin-left: 2rem; /* mx-8, margin left and right 2rem */
+    margin-right: 2rem; /* mx-8, margin left and right 2rem */
+    display: flex; /* flex */
+    justify-content: center; /* justify-center */
+}
+
+#resSearchBar{
+    width: 350px;
+}
+
+.resp-contact{
+    margin-top:50px;
+    margin-right : 50px
+}
+  
+@media (max-width: 768px) {
+    #resSearchBar{
+        width: 100%;
+        position: relative;
+    }
+    .search-container {
+        flex-grow: 1; /* flex-grow */
+        margin-left: 1px; /* mx-8, margin left and right 2rem */
+        margin-right: 1px; /* mx-8, margin left and right 2rem */
+        display: flex; /* flex */
+        justify-content: center; /* justify-center */
+        position: absolute;
+        width: 95%;
+        margin-top: 145px;
+    }
+    #marginTop{
+        margin-top: 50px;
+    }
+    .resp-contact{
+        margin-top:10px;
+        margin-right : 0px
+    }
+}
