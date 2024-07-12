@@ -8,10 +8,10 @@ import './style.css'
 
 const ScrollBanner = () => {
   const images = [
-    { id: 1, imageUrl: '/banner/pic1.png', title: 'Slide 1', body: 'Description for Slide 1' },
-    { id: 2, imageUrl: '/banner/pic2.png', title: 'Slide 2', body: 'Description for Slide 2' },
-    { id: 3, imageUrl: '/banner/pic3.png', title: 'Slide 3', body: 'Description for Slide 3' },
-    { id: 4, imageUrl: '/banner/pic4.png', title: 'Slide 4', body: 'Description for Slide 4' }
+    { id: 1, imageUrl: '/banner/first.jpg', title: 'Slide 1', body: 'Description for Slide 1' },
+    { id: 2, imageUrl: '/banner/second.jpg', title: 'Slide 2', body: 'Description for Slide 2' },
+    { id: 3, imageUrl: '/banner/third.jpg', title: 'Slide 3', body: 'Description for Slide 3' },
+    { id: 4, imageUrl: '/banner/fourth.jpg', title: 'Slide 4', body: 'Description for Slide 4' }
   ];
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex, e) => {
