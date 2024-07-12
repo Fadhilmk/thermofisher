@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <>
       {/* Sticky Navbar */}
-      <nav className="sticky top-0 bg-red-600 text-white z-50">
+      <nav className="sticky top-0 bg-blue-600 text-white z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Left Section */}
@@ -81,10 +81,10 @@ const Navbar = () => {
 
           {/* Right Section for Nav Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/" className="text-gray-700 hover:text-red-600 no-underline ">Home</Link>
-            <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline">Products</Link>
-            <Link href="/#about" className="text-gray-700 hover:text-red-600 no-underline ">About Us</Link>
-            <Link href="/#contact" className="text-gray-700 hover:text-red-600 no-underline ">Contact Us</Link>
+            <Link href="/" className="text-gray-700 hover:text-blue-600 no-underline ">Home</Link>
+            <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
+            <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline ">About Us</Link>
+            <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline ">Contact Us</Link>
           </div>
 
           {/* Mobile Menu Button */}

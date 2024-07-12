@@ -1,19 +1,61 @@
+
 "use client";
-
-import { products } from '@/Datas/product';
+import React, { useEffect, useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../../firebase';
 import Navbar from '@/components/NavBar';
-import { useParams } from 'next/navigation';
-import React, { useState } from 'react';
-import '../../../components/style.css'
+import '../../../components/style.css';
 
-export default function Page() {
+export default function ProductDetailPage() {
   const { productId } = useParams();
-  const product = products.find((item) => item.id == productId);
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        if (!productId) return;
+
+        const docRef = doc(db, 'products', 'allproducts', 'all-products', productId);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          setProduct(docSnap.data());
+        } else {
+          console.log('No such document!');
+        }
+      } catch (error) {
+        console.error('Error fetching product:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [productId]);
 
   const handleModal = () => {
     setShowModal(!showModal);
   };
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-xl font-semibold">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!product) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-xl font-semibold">Product not found.</div>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -35,7 +77,7 @@ export default function Page() {
             <p className="text-xl font-semibold mb-4">Catalog Number: {product.catNumber}</p>
             <p className="text-gray-700">{product.desc}</p>
             <button
-              className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded mt-4"
+              className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 rounded-md mt-4"
               onClick={handleModal}
             >
               Request a Quote
