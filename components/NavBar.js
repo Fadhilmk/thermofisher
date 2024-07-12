@@ -9,6 +9,10 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  const handleClick = () => {
+    console.log('hi');
+  };
+  
   return (
     <>
       {/* Sticky Navbar */}
@@ -82,7 +86,11 @@ const Navbar = () => {
 
           {/* Right Section for Nav Links */}
           <div className="hidden md:flex items-center space-x-4">
-            <Link href="/" className="text-gray-700 hover:text-red-600 no-underline">Home</Link>
+            <Link href="/" className="text-gray-700 hover:text-red-600 no-underline">
+            <div onClick={handleClick} className="cursor-pointer text-gray-700 hover:text-red-600 no-underline">
+              Home
+            </div>
+            </Link>
             <Link href="/products" className="text-gray-700 hover:text-red-600 no-underline">Products</Link>
             <Link href="" className="text-gray-700 hover:text-red-600 no-underline">About Us</Link>
             <Link href="" className="text-gray-700 hover:text-red-600 no-underline">Contact Us</Link>

@@ -47,4 +47,11 @@
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
+    .search-container {
+        flex-grow: 1; /* flex-grow */
+        margin-left: 1rem; /* mx-8, margin left and right 2rem */
+        margin-right: 1rem; /* mx-8, margin left and right 2rem */
+        display: flex; /* flex */
+        justify-content: center; /* justify-center */
+    }
 }

@@ -1,12 +1,19 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { products } from '@/Datas/product';
 import Navbar from '@/components/NavBar';
+import AOS from 'aos';
 
 export default function page() {
   const router = useRouter();
+  const [scrollYPosition, setScrollYPosition] = useState(0);
+  const refRow1 = useRef(null);
+  const refRow2 = useRef(null);
+  useEffect(()=>{
+    AOS.init();
+  })
   return (
     <>
     <Navbar />
