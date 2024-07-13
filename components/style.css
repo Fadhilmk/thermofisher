@@ -1,5 +1,5 @@
 #carousel img{
-    height: 600px;
+    height: 450px;
 }
 #responsive-nav{
     display: flex;
@@ -31,9 +31,28 @@
     position: relative;
     left: -45px;
 }
+.resSearchBarMob{
+    display: none;
+    align-items: center;
+    justify-content: center;  /* equivalent to justify-center */
+    flex-grow: 1;  /* equivalent to flex-grow */
+    margin-left: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25rem = 2rem) */
+    margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */
+}
+.paddingNav{
+    padding-block:40px ;
+}
+.topNav{
+    height: 50px;
+}
+
+
 @media (max-width: 768px) {
+    #paddingNav{
+        padding-block: 8px;
+    }
     #carousel img{
-      height: 300px;
+      height: 100px;
     }
      #form-response{
         width: 70%;
@@ -50,17 +69,28 @@
         margin-right: 0px;
     }
     .resSearchBar{
+        visibility: hidden;
         display: flex;
         justify-content: center;  /* equivalent to justify-center */
         flex-grow: 1;  /* equivalent to flex-grow */
         margin-left: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25rem = 2rem) */
         margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */    
-        position: relative;
-        bottom: -65px;
-        margin-left: 10px;
-        right: -45px;
     }
     .search-bar-width{
-        width: 300px;
+        width: 200px;
     }
-  }
+    .resSearchBarMob{
+        display: flex;
+        width: 95%;
+        justify-content: center;  /* equivalent to justify-center */
+        flex-grow: 1;  /* equivalent to flex-grow */
+        margin-left: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25rem = 2rem) */
+        margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */
+    }
+    .search-bar-width-mob{
+        width: 280px;
+    }
+    .paddingNav{
+        padding-block:8px ;
+    }
+}
