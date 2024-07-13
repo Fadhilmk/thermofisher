@@ -71,12 +71,12 @@ const Navbar = () => {
                 placeholder="Search..." 
                 className="search-bar-width px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-blue-600"
               />
-              <button className="px-2 ml-1 py-2 border border-blue-600 rounded-md">
+              <button className="searchButton px-2 ml-1 py-2">
                 <Image
                   src='/icons/search.png'
                   alt="Search"
-                  width={30}
-                  height={30}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </button>

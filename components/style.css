@@ -25,7 +25,11 @@
     margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */
 }
 .search-bar-width{
-    width: 350px;
+    width: 450px;
+}
+.searchButton{
+    position: relative;
+    left: -45px;
 }
 @media (max-width: 768px) {
     #carousel img{
@@ -54,6 +58,7 @@
         position: relative;
         bottom: -65px;
         margin-left: 10px;
+        right: -45px;
     }
     .search-bar-width{
         width: 300px;
