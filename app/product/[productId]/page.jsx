@@ -17,6 +17,33 @@ export default function ProductDetailPage() {
   const [showAllSpecifications, setShowAllSpecifications] = useState(false);
   const router = useRouter();
 
+  const [formData1, setFormData1] = useState({
+    name: '',
+    email: '',
+    contact: ''
+  });
+
+  const [formData2, setFormData2] = useState({
+    name: '',
+    email: '',
+    contact: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData1({
+      ...formData1,
+      [name]: value
+    });
+  };
+  const handleData = (e) => {
+    const { name, value } = e.target;
+    setFormData2({
+      ...formData2,
+      [name]: value
+    });
+  };
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -175,9 +202,11 @@ export default function ProductDetailPage() {
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="name"
+                  name="name"
                   type="text"
                   placeholder="Name"
                   required
+                  onChange={handleChange}
                 />
               </div>
               <div className="mb-4">
@@ -185,9 +214,11 @@ export default function ProductDetailPage() {
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="Email"
                   required
+                  onChange={handleChange}
                 />
               </div>
               <div className="mb-4">
@@ -195,9 +226,11 @@ export default function ProductDetailPage() {
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="contact"
+                  name="contact"
                   type="text"
                   placeholder="Contact"
                   required
+                  onChange={handleChange}
                 />
               </div>
               <div className="mb-4">
@@ -243,6 +276,7 @@ export default function ProductDetailPage() {
                     type="text"
                     placeholder="Name"
                     required
+                    onChange={handleData}
                   />
                 </div>
                 <div className="mb-4">
@@ -253,6 +287,7 @@ export default function ProductDetailPage() {
                     type="text"
                     placeholder="Contact"
                     required
+                    onChange={handleData}
                 />
               </div>
               <div className="mb-4">
