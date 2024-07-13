@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 const ContactUs = () => {
   return (
-    <div id='contact' className="relative">
-      <div className="relative mx-auto px-4 py-12">
+    <div id='contact' className="container mt-8 relative">
+      <div className="relative mx-auto">
       <h1 className="text-4xl text-center text-blue-500 font-bold mb-8">CONTACT US</h1>
-        <div className="flex flex-col lg:flex-row items-center lg:items-start  p-8 rounded-lg">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start p-8 rounded-lg">
           <div id='resContactText' className="w-full align-center justify-center text-center lg:w-1/2 mb-8 lg:mb-0">
             <p className="mb-4">
               We&aposd love to hear from you! Please fill out the form on the right to get in touch with us.
