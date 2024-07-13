@@ -85,6 +85,7 @@ const Navbar = () => {
               <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
+              <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -121,6 +122,7 @@ const Navbar = () => {
             <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
             <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
             <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
           </div>
         </div>
       </nav>
