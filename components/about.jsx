@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 const AboutUs = () => {
   return (
-    <div id='about' className="container mt-20 mx-auto px-4 py-12">
-      <h1 className="text-4xl text-center text-red-500 font-bold mb-8">ABOUT US</h1>
+    <div id='about' className="container mt-1 mx-auto px-4 py-40">
+      <h1 className="text-4xl text-center text-blue-500 font-bold mb-8">ABOUT US</h1>
       <div className="flex flex-col mt-20 lg:flex-row items-center lg:items-start">
 
         <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mb-8 lg:mb-0">
