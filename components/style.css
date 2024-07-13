@@ -39,9 +39,7 @@
     margin-left: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25rem = 2rem) */
     margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */
 }
-.paddingNav{
-    padding-block:40px ;
-}
+
 .topNav{
     height: 50px;
 }
@@ -63,7 +61,7 @@
         margin-right: 0px;
     }
     #respContactForm{
-        padding: 20px;
+        padding: 25px;
     }
     #respCotactText{
         margin-right: 0px;

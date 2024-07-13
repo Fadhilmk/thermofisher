@@ -6,12 +6,14 @@ import { ref, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../../../firebase";
 import Navbar from "@/components/NavBar";
 import "../../../components/style.css";
+import Image from "next/image";
 
 export default function ProductDetailPage() {
   const { productId } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [showModalPDF, setShowModalPDF] = useState(false);
   const [showAllSpecifications, setShowAllSpecifications] = useState(false);
   const router = useRouter();
 
@@ -41,6 +43,9 @@ export default function ProductDetailPage() {
   const handleModal = () => {
     setShowModal(!showModal);
   };
+  const handleModalPDF = () =>{
+    setShowModalPDF(!showModalPDF)
+  }
 
   const toggleSpecifications = () => {
     setShowAllSpecifications(!showAllSpecifications);
@@ -118,7 +123,7 @@ export default function ProductDetailPage() {
             </button>
             <button
               className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-md mt-4"
-              onClick={handleDownloadPdf}
+              onClick={handleModalPDF}
             >
               Download PDF
             </button>
@@ -153,6 +158,16 @@ export default function ProductDetailPage() {
       {showModal && (
         <div className="fixed z-20 inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div id="form-response" className="bg-white rounded shadow-lg max-w-md">
+            <div onClick={handleModal} className="w-full flex justify-end relative" style={{left:10, top:-10}}>
+              <Image
+                src="/icons/close.png"
+                alt="Logo"
+                width={25}
+                height={25}
+                className="object-contain hover:cursor-pointer"
+              />
+            </div>
+
             <h2 className="text-2xl font-bold mb-4">Request a Quote</h2>
             <form>
               <div className="mb-4">
@@ -162,6 +177,7 @@ export default function ProductDetailPage() {
                   id="name"
                   type="text"
                   placeholder="Name"
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -171,6 +187,7 @@ export default function ProductDetailPage() {
                   id="email"
                   type="email"
                   placeholder="Email"
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -180,6 +197,7 @@ export default function ProductDetailPage() {
                   id="contact"
                   type="text"
                   placeholder="Contact"
+                  required
                 />
               </div>
               <div className="mb-4">
@@ -193,18 +211,66 @@ export default function ProductDetailPage() {
                 />
               </div>
               <div className="flex items-center justify-between">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                <button className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                   Submit
-                </button>
-                <button
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="button"
-                  onClick={handleModal}
-                >
-                  Close
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {showModalPDF && (
+          <div className="fixed z-20 inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <div id="form-response" className="bg-white rounded shadow-lg max-w-md">
+              <div onClick={handleModalPDF} className="w-full flex justify-end relative" style={{left:10, top:-10}}>
+                <Image
+                  src="/icons/close.png"
+                  alt="Logo"
+                  width={25}
+                  height={25}
+                  className="object-contain hover:cursor-pointer"
+                />
+              </div>
+
+              <h2 className="text-2xl font-bold mb-4">Request a Quote</h2>
+              <form>
+                <div className="mb-4">
+                  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">Name</label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="name"
+                    type="text"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="contact">Contact</label>
+                  <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="contact"
+                    type="text"
+                    placeholder="Contact"
+                    required
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="model">Product Model Number</label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="model"
+                  type="text"
+                  value={product.catNumber}
+                  readOnly
+                />
+              </div>
+              <div className="flex items-center justify-between">
+                <button onClick={handleDownloadPdf} className="w-full bg-blue-500 mt-4 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                  Download Now
+                </button>
+              </div>
+            </form> 
           </div>
         </div>
       )}
