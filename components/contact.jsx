@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Image from "next/image";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    alert('SUCCESS')
+    alert("SUCCESS");
   };
 
   return (
@@ -27,28 +27,40 @@ const ContactUs = () => {
       <div className="my-8">
         <hr className="border-t border-gray-300" />
       </div>
-      <div id='contact' className="container mt-8 relative">
+      <div id="contact" className="container mt-8 relative">
         <div className="relative mx-auto">
-          <h1 className="text-4xl text-center text-blue-500 font-bold mb-8">CONTACT US</h1>
+          <h1 className="text-4xl text-center text-blue-500 font-bold mb-8">
+            CONTACT US
+          </h1>
           <div className="flex flex-col lg:flex-row items-center lg:items-start p-8 rounded-lg">
-            <div id='resContactText' className="w-full align-center justify-center text-center lg:w-1/2 mb-8 lg:mb-0">
+            <div
+              id="resContactText"
+              className="w-full align-center justify-center text-center lg:w-1/2 mb-8 lg:mb-0"
+            >
               <p className="mb-4">
-                We&aposd love to hear from you! Please fill out the form on the right to get in touch with us.
+                We&aposd love to hear from you! Please fill out the form on the
+                right to get in touch with us.
               </p>
               <p className="mb-4">
-                Address: 1234 Street Name, City, State, ZIP
+                Address: XRF Analyzer Middle East International Business Tower,
+                Al Amaal Street Business Bay
               </p>
-              <p className="mb-4">
-                Phone: (123) 456-7890
-              </p>
-              <p>
-                Email: contact@example.com
-              </p>
+              <p className="mb-4">Phone: +971 567 455 488</p>
+              <p>Email: xrfanalyzermiddleeast@gmail.com</p>
             </div>
             <div className="w-full lg:w-1/2 lg:p-8 shadow-lg rounded border border-gray-300">
-              <form id='respContactForm' className="space-y-4" onSubmit={handleSubmit}>
+              <form
+                id="respContactForm"
+                className="space-y-4"
+                onSubmit={handleSubmit}
+              >
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Name
+                  </label>
                   <input
                     required
                     type="text"
@@ -60,7 +72,12 @@ const ContactUs = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Email
+                  </label>
                   <input
                     required
                     type="email"
@@ -72,7 +89,12 @@ const ContactUs = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Message
+                  </label>
                   <textarea
                     required
                     id="message"

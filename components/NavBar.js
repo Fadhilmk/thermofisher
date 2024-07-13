@@ -19,26 +19,26 @@ const Navbar = () => {
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
                 <img src="/icons/message.png" alt="Email" className="w-5 h-5" />
-                <span className="hidden sm:inline" style={{ fontSize: '0.95rem' }}>email@example.com</span>
+                <span className="hidden sm:inline" style={{ fontSize: '0.95rem' }}>xrfanalyzermiddleeast@gmail.com</span>
               </div>
               <div className="flex items-center space-x-2">
                 <img src="/icons/phone-call.png" alt="Phone" className="w-5 h-5" />
-                <span className="hidden sm:inline" style={{ fontSize: '0.95rem' }}>(123) 456-7890</span>
+                <span className="hidden sm:inline" style={{ fontSize: '0.95rem' }}>+971 567 455 488</span>
               </div>
             </div>
 
             {/* Right Section */}
             <div className="flex items-center space-x-8">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white">
+              <a href="/" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white">
                 <img src="/icons/linkedin.png" alt="LinkedIn" className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white">
+              <a href="/" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white">
                 <img src="/icons/instagram.png" alt="Instagram" className="w-5 h-5" />
               </a>
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white">
+              <a href="/" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white">
                 <img src="/icons/facebook.png" alt="Facebook" className="w-5 h-5" />
               </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white">
+              <a href="/" target="_blank" rel="noopener noreferrer" className="relative flex items-center justify-center w-7 h-7 rounded-full bg-white">
                 <img src="/icons/twitter.png" alt="Twitter" className="w-5 h-5" />
               </a>
             </div>
@@ -52,13 +52,17 @@ const Navbar = () => {
           <div id="responsive-nav" className="flex h-20" style={{alignItems:'center', justifyContent:'space-between'}}>
             {/* Left Section for Logo */}
             <div className="flex items-center">
-              <Image
-                src="/icons/ThermoFisher.png"
-                alt="Logo"
-                width={90}
-                height={90}
-                className="object-contain"
-              />
+            
+                <a href="/">
+                  <Image
+                    src="/icons/ThermoFisher.png"
+                    alt="Logo"
+                    width={90}
+                    height={90}
+                    className="object-contain"
+                  />
+                </a>
+             
             </div>
 
             {/* Center Section for Search Bar */}
@@ -82,10 +86,11 @@ const Navbar = () => {
             {/* Right Section for Nav Links */}
             <div className="hidden md:flex items-center space-x-4 ml-auto">
               <Link href="/" className="text-gray-700 hover:text-blue-600 no-underline">Home</Link>
+              <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
               <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
-              <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
+              
             </div>
 
             {/* Mobile Menu Button */}
@@ -119,10 +124,11 @@ const Navbar = () => {
           {/* Mobile Menu */}
           <div className={`md:hidden flex flex-col text-center space-y-4 mt-2 transition-all duration-1000 ${isOpen ? 'opacity-100 max-h-full' : 'opacity-0 max-h-0 overflow-hidden'}`}>
             <Link href="/" className="text-gray-700 mt-2 hover:text-blue-600 no-underline">Home</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
             <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
             <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
             <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
-            <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
+            
           </div>
         </div>
       </nav>
