@@ -38,7 +38,7 @@ const ContactUs = () => {
               className="w-full align-center justify-center text-center lg:w-1/2 mb-8 lg:mb-0"
             >
               <p className="mb-4">
-                We&aposd love to hear from you! Please fill out the form on the
+                We&apos;d love to hear from you! Please fill out the form on the
                 right to get in touch with us.
               </p>
               <p className="mb-4">

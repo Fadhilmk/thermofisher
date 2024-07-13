@@ -27,7 +27,7 @@ const AboutUs = () => {
             </p>
             <h5 className="mb-2 text-center">Our Mission</h5>
             <p className="mb-3 text-center lg:text-left">
-            Our mission is to provide high-quality XRF technology tailored to our clients' diverse needs. We aim to build lasting partnerships by understanding your unique challenges and delivering exceptional service and support.
+            Our mission is to provide high-quality XRF technology tailored to our clients&apos; diverse needs. We aim to build lasting partnerships by understanding your unique challenges and delivering exceptional service and support.
             </p>
             <h5 className="mb-2 text-center">What We Offer</h5>
             <p className="mb-3 text-center lg:text-left">
