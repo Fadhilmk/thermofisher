@@ -103,7 +103,7 @@ const Navbar = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="w-72 px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-blue-600"
+              className="w-72 px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-grey-600"
             />
             <button className="ml-2 px-2 py-2">
               <Image

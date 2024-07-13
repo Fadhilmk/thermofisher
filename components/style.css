@@ -39,20 +39,22 @@
     margin-left: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25rem = 2rem) */
     margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */
 }
-.paddingNav{
-    padding-block:40px ;
-}
+
 .topNav{
     height: 50px;
 }
 
+.imag-resp{
+    object-fit: contain;
+    /* height: auto; */
+}
 
 @media (max-width: 768px) {
     #paddingNav{
         padding-block: 8px;
     }
     #carousel img{
-      height: 100px;
+      height: 150px;
     }
      #form-response{
         width: 70%;
@@ -63,7 +65,7 @@
         margin-right: 0px;
     }
     #respContactForm{
-        padding: 20px;
+        padding: 25px;
     }
     #respCotactText{
         margin-right: 0px;
@@ -92,5 +94,8 @@
     }
     .paddingNav{
         padding-block:8px ;
+    }
+    .imag-resp{
+        object-fit: cover;
     }
 }
