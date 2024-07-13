@@ -10,17 +10,52 @@
     width: 100%;
     padding: 35px;
 }
+#resContactText{
+    padding-top: 50px;
+    margin-right: 50px;
+}
+#respContactForm{
+    padding: 0px;
+}
+.resSearchBar{
+    display: flex;
+    justify-content: center;  /* equivalent to justify-center */
+    flex-grow: 1;  /* equivalent to flex-grow */
+    margin-left: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25rem = 2rem) */
+    margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */
+}
+.search-bar-width{
+    width: 350px;
+}
 @media (max-width: 768px) {
     #carousel img{
       height: 300px;
     }
-    /* #responsive-nav{
-        display: block;
-        justify-content: center;
-        align-items: center;
-    } */
      #form-response{
         width: 70%;
         padding: 15px;
      }
+     #resContactText{
+        padding-top: 0px;
+        margin-right: 0px;
+    }
+    #respContactForm{
+        padding: 20px;
+    }
+    #respCotactText{
+        margin-right: 0px;
+    }
+    .resSearchBar{
+        display: flex;
+        justify-content: center;  /* equivalent to justify-center */
+        flex-grow: 1;  /* equivalent to flex-grow */
+        margin-left: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25rem = 2rem) */
+        margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */    
+        position: relative;
+        bottom: -65px;
+        margin-left: 10px;
+    }
+    .search-bar-width{
+        width: 300px;
+    }
   }
