@@ -32,7 +32,6 @@ const FeaturedProducts = () => {
         
         // Set the products data to the state
         setProducts(productsData);
-        console.log(products.name)
       } catch (error) {
         console.error('Error fetching products:', error);
       } finally {

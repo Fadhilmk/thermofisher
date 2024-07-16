@@ -1,4 +1,7 @@
+"use client"
 import React, { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase"; // Adjust the path as needed
 import Image from "next/image";
 
 const ContactUs = () => {
@@ -16,10 +19,16 @@ const ContactUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("SUCCESS");
+    try {
+      await addDoc(collection(db, "main-contact-form"), formData);
+      alert("SUCCESS");
+      setFormData({ name: "", email: "", message: "" }); // Clear form
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert("Error submitting form. Please try again.");
+    }
   };
 
   return (
