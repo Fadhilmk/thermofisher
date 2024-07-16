@@ -32,6 +32,7 @@ export default function Page() {
         
         // Set the products data to the state
         setProducts(productsData);
+        
       } catch (error) {
         console.error('Error fetching products:', error);
       } finally {
@@ -65,7 +66,7 @@ export default function Page() {
               />
               <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
               <p className="text-gray-700 mb-4">{product.catNumber}</p>
-              <p className="text-gray-700 mb-4">{product.price}</p>
+              
               <button 
                 className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition-colors duration-200"
                 onClick={() => router.push(`/product/${product.id}`)}
