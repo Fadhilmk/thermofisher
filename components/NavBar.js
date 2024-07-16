@@ -271,10 +271,11 @@ const Navbar = () => {
             {/* Right Section for Nav Links */}
             <div className="hidden md:flex items-center space-x-4 ml-auto">
               <Link href="/" className="text-gray-700 hover:text-blue-600 no-underline">Home</Link>
-              <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
               <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
+              <Link href="/applications" className="text-gray-700 hover:text-blue-600 no-underline">Applications</Link>
               <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
+              <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -322,10 +323,11 @@ const Navbar = () => {
           {/* Mobile Menu */}
           <div className={`md:hidden flex flex-col text-center space-y-4 mt-2 transition-all duration-1000 ${isOpen ? 'opacity-100 max-h-full' : 'opacity-0 max-h-0 overflow-hidden'}`}>
             <Link href="/" className="text-gray-700 mt-2 hover:text-blue-600 no-underline">Home</Link>
-            <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
             <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
+            <Link href="/applications" className="text-gray-700 hover:text-blue-600 no-underline" >Applications</Link>
             <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
             <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
+            <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
           </div>
         </div>
       </nav>

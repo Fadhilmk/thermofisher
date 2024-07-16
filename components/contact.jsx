@@ -37,16 +37,25 @@ const ContactUs = () => {
               id="resContactText"
               className="w-full align-center justify-center text-center lg:w-1/2 mb-8 lg:mb-0"
             >
+              <h2 className="text-2xl text-blue-500 font-bold mb-4">XRF Analyzer Middle East</h2>
               <p className="mb-4">
                 We&apos;d love to hear from you! Please fill out the form on the
                 right to get in touch with us.
               </p>
               <p className="mb-4">
                 Address: XRF Analyzer Middle East International Business Tower,
-                Al Amaal Street Business Bay
+                Al Amaal Street Business Bay, Dubai-UAE
               </p>
               <p className="mb-4">Phone: +971 567 455 488</p>
-              <p>Email: xrfanalyzermiddleeast@gmail.com</p>
+              <p>
+                Email:{" "}
+                <a
+                  href="mailto:xrfanalyzermiddleeast@gmail.com"
+                  className="text-blue-500 underline"
+                >
+                  xrfanalyzermiddleeast@gmail.com
+                </a>
+              </p>
             </div>
             <div className="w-full lg:w-1/2 lg:p-8 shadow-lg rounded border border-gray-300">
               <form
