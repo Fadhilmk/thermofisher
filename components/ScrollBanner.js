@@ -1,41 +1,53 @@
-// components/ScrollBanner.js
+
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.css'
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../firebase';
+import './style.css';
 
 const ScrollBanner = () => {
-  const images = [
-    { id: 1, imageUrl: '/banner/fifth.jpg', title: 'Slide 1', body: 'Description for Slide 1' },
-    { id: 2, imageUrl: '/banner/fifth.jpg', title: 'Slide 2', body: 'Description for Slide 2' },
-    { id: 3, imageUrl: '/banner/fifth.jpg', title: 'Slide 3', body: 'Description for Slide 3' },
-    { id: 4, imageUrl: '/banner/fifth.jpg', title: 'Slide 4', body: 'Description for Slide 4' },
-    { id: 4, imageUrl: '/banner/fifth.jpg', title: 'Slide 5', body: 'Description for Slide 5' }
-
-  ];
+  const [images, setImages] = useState([]);
   const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'slider'));
+        const imageData = [];
+        querySnapshot.forEach((doc) => {
+          imageData.push({ id: doc.id, ...doc.data() });
+        });
+        setImages(imageData);
+      } catch (error) {
+        console.error('Error fetching images:', error);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
 
   return (
-    <>
-      <Carousel id='carousel' activeIndex={index} onSelect={handleSelect}>
-        {images.map((item) => (
-          <Carousel.Item key={item.id} interval={4000}>
-            <img src={item.imageUrl} alt={`Slide ${item.id}`} className="imag-resp d-block w-100 h-50"/>
-            <Carousel.Caption>
-              {/* <p>{item.title}</p>
+    <Carousel id='carousel' activeIndex={index} onSelect={handleSelect}>
+      {images.map((item) => (
+        <Carousel.Item key={item.id} interval={4000}>
+          <img src={item.imageUrl} alt={`Slide ${item.id}`} className="imag-resp d-block w-100 h-50" />
+          <Carousel.Caption>
+            {/* <p>{item.title}</p>
               <p>{item.body}</p>
               <button className="btn btn-danger">Visit Docs</button> */}
-            </Carousel.Caption>
-          </Carousel.Item>
-        ))}
-      </Carousel>
-    </>
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
+    </Carousel>
   );
 }
 
 export default ScrollBanner;
+

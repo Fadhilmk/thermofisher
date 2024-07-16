@@ -67,7 +67,7 @@ const FeaturedProducts = () => {
               className="w-full h-48 object-contain mb-4 rounded"
             />
             <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-            <p className="text-gray-700 mb-4">{product.catNumber}</p>
+            <p className="text-gray-700 mb-3">{product.catNumber}</p>
           </div>
         ))}
       </div>
