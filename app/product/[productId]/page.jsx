@@ -56,7 +56,20 @@ export default function ProductDetailPage() {
       setFormFilled(false);
     }
   };
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await addDoc(collection(db, "quoteRequests"), {
+        ...formData1,
+        productId: productId,
+        timestamp: new Date(),
+      });
+      setShowModal(false);
+      alert("Quote request submitted successfully!");
+    } catch (error) {
+      console.error("Error submitting quote request:", error);
+    }
+  };
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -102,9 +115,7 @@ export default function ProductDetailPage() {
 
       const docRef = await addDoc(collection(db, "pdfDownloadForms"), {
         name: formData2.name,
-        email: formData2.email,
         contact: formData2.contact,
-        modelNumber: formData2.modelNumber,
         productId: productId, // Assuming you have productId available
         timestamp: new Date(),
       });
@@ -177,7 +188,7 @@ export default function ProductDetailPage() {
               className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-md mt-4"
               onClick={handleModalPDF}
             >
-              Download PDF
+              Download Datasheet
             </button>
           </div>
         </div>
@@ -269,7 +280,8 @@ export default function ProductDetailPage() {
                 />
               </div>
               <div className="flex items-center justify-between">
-                <button className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                <button className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit"
+                onClick={handleSubmit}>
                   Submit
                 </button>
               </div>
@@ -324,6 +336,7 @@ export default function ProductDetailPage() {
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   id="model"
                   type="text"
+                  name="modelNumber"
                   value={product.catNumber}
                   readOnly
                 />
@@ -373,3 +386,5 @@ const productSpecifications = {
   "Width (English)": "8.2 in.",
   "Width (Metric)": "206 mm",
 };
+
+
