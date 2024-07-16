@@ -291,7 +291,7 @@ export default function ProductDetailPage() {
               />
             </div>
 
-            <h2 className="text-2xl font-bold mb-4">Download PDF</h2>
+            <h2 className="text-2xl font-bold mb-4">Download Datasheet</h2>
             <p className="text-sm text-gray-600 mb-4">Please fill the form to download</p>
             <form>
               <div className="mb-4">
