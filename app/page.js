@@ -7,13 +7,14 @@ import FeaturedProducts from '@/components/FeaturedProducts';
 import AboutUs from '@/components/about';
 import ContactUs from '@/components/contact';
 import Footer from '@/components/Footer';
-
+import FeaturedApplications from '@/components/FeaturedApplications';
 const Home = () => {
   return (
     <>
       <Navbar />
       <BootstrapCarousel />
       <FeaturedProducts />
+      <FeaturedApplications />
       <AboutUs />
       <ContactUs />
       <Footer />
