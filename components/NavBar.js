@@ -1,13 +1,47 @@
-// import React, { useState } from 'react';
+
+// import React, { useState, useEffect } from 'react';
 // import Image from 'next/image';
 // import Link from 'next/link';
+// import { collection, getDocs, query, where, doc } from 'firebase/firestore';
+// import { db } from '../firebase'; // Adjust the path as necessary
 
 // const Navbar = () => {
 //   const [isOpen, setIsOpen] = useState(false);
+//   const [searchTerm, setSearchTerm] = useState('');
+//   const [suggestions, setSuggestions] = useState([]);
+//   const [loading, setLoading] = useState(false);
 
 //   const toggleMenu = () => {
 //     setIsOpen(!isOpen);
 //   };
+
+//   useEffect(() => {
+//     const fetchSuggestions = async () => {
+//       if (searchTerm.trim() === '') {
+//         setSuggestions([]);
+//         return;
+//       }
+
+//       setLoading(true);
+
+//       try {
+//         const allProductsDocRef = doc(db, 'products', 'allproducts');
+//         const allProductsCollectionRef = collection(allProductsDocRef, 'all-products');
+//         const q = query(allProductsCollectionRef, where('name', '>=', searchTerm), where('name', '<=', searchTerm + '\uf8ff'));
+//         const querySnapshot = await getDocs(q);
+        
+//         const productsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        
+//         setSuggestions(productsData);
+//       } catch (error) {
+//         console.error('Error fetching suggestions:', error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchSuggestions();
+//   }, [searchTerm]);
 
 //   return (
 //     <>
@@ -49,28 +83,28 @@
 //       {/* Non-Sticky Navbar */}
 //       <nav className="paddingNav sticky top-0 z-10 py-2 bg-white border border-gray-300 text-black">
 //         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div id="responsive-nav" className="flex h-20" style={{alignItems:'center', justifyContent:'space-between'}}>
+//           <div id="responsive-nav" className="flex h-20" style={{ alignItems: 'center', justifyContent: 'space-between' }}>
 //             {/* Left Section for Logo */}
 //             <div className="flex items-center">
-            
-//                 <a href="/">
-//                   <Image
-//                     src="/icons/ThermoFisher.png"
-//                     alt="Logo"
-//                     width={90}
-//                     height={90}
-//                     className="object-contain"
-//                   />
-//                 </a>
-             
+//               <Link href="/">
+//                 <Image
+//                   src="/icons/ThermoFisher.png"
+//                   alt="Logo"
+//                   width={90}
+//                   height={90}
+//                   className="object-contain"
+//                 />
+//               </Link>
 //             </div>
 
 //             {/* Center Section for Search Bar */}
-//             <div className="hidden lg:flex items-center flex-grow mx-8 justify-center">
+//             <div className="hidden lg:flex items-center flex-grow mx-8 justify-center relative">
 //               <input
 //                 type="text"
 //                 placeholder="Search..."
 //                 className="w-96 px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-blue-600"
+//                 value={searchTerm}
+//                 onChange={(e) => setSearchTerm(e.target.value)}
 //               />
 //               <button className="ml-2 px-2 py-2">
 //                 <Image
@@ -81,16 +115,28 @@
 //                   className="object-contain"
 //                 />
 //               </button>
+//               {loading && <div className="ml-2">Loading...</div>}
+//               {suggestions.length > 0 && (
+//                 <ul className="absolute left-0 top-full mt-2 w-full bg-white border border-gray-300 rounded-md shadow-lg">
+//                   {suggestions.map((product) => (
+//                     <li key={product.id} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+//                       <Link href={`/product/${product.id}`}>
+//                         {product.name}
+//                       </Link>
+//                     </li>
+//                   ))}
+//                 </ul>
+//               )}
 //             </div>
 
 //             {/* Right Section for Nav Links */}
 //             <div className="hidden md:flex items-center space-x-4 ml-auto">
 //               <Link href="/" className="text-gray-700 hover:text-blue-600 no-underline">Home</Link>
-//               <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
 //               <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
+//               <Link href="/applications" className="text-gray-700 hover:text-blue-600 no-underline">Applications</Link>
 //               <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
 //               <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
-              
+//               <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
 //             </div>
 
 //             {/* Mobile Menu Button */}
@@ -104,31 +150,45 @@
 //           </div>
 
 //           {/* Mobile Search Bar */}
-//           <div className="flex lg:hidden items-center justify-center mt-2">
+//           <div className="flex lg:hidden items-center justify-center mt-2 relative">
 //             <input
 //               type="text"
 //               placeholder="Search..."
 //               className="w-72 px-4 py-2 rounded-md bg-white text-gray-700 focus:outline-none border border-grey-600"
+//               value={searchTerm}
+//               onChange={(e) => setSearchTerm(e.target.value)}
 //             />
 //             <button className="ml-2 px-2 py-2">
 //               <Image
-//                 src='/icons/search.png'
+//                 src="/icons/search.png"
 //                 alt="Search"
 //                 width={20}
 //                 height={20}
 //                 className="object-contain"
 //               />
 //             </button>
+//             {loading && <div className="ml-2">Loading...</div>}
+//             {suggestions.length > 0 && (
+//               <ul className="absolute left-0 top-full mt-2 w-full bg-white border border-gray-300 rounded-md shadow-lg">
+//                 {suggestions.map((product) => (
+//                   <li key={product.id} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+//                     <Link href={`/product/${product.id}`}>
+//                       {product.name}
+//                     </Link>
+//                   </li>
+//                 ))}
+//               </ul>
+//             )}
 //           </div>
 
 //           {/* Mobile Menu */}
 //           <div className={`md:hidden flex flex-col text-center space-y-4 mt-2 transition-all duration-1000 ${isOpen ? 'opacity-100 max-h-full' : 'opacity-0 max-h-0 overflow-hidden'}`}>
 //             <Link href="/" className="text-gray-700 mt-2 hover:text-blue-600 no-underline">Home</Link>
-//             <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
 //             <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
+//             <Link href="/applications" className="text-gray-700 hover:text-blue-600 no-underline" >Applications</Link>
 //             <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
 //             <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
-            
+//             <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
 //           </div>
 //         </div>
 //       </nav>
@@ -191,12 +251,20 @@ const Navbar = () => {
             {/* Left Section */}
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <img src="/icons/message.png" alt="Email" className="w-5 h-5" />
-                <span className="hidden sm:inline" style={{ fontSize: '0.95rem' }}>xrfanalyzermiddleeast@gmail.com</span>
+                <a href="mailto:xrfanalyzermiddleeast@gmail.com">
+                  <img src="/icons/message.png" alt="Email" className="w-5 h-5" />
+                </a>
+                <a href="mailto:xrfanalyzermiddleeast@gmail.com" className="hidden sm:inline text-white" style={{ fontSize: '0.95rem' }}>
+                  xrfanalyzermiddleeast@gmail.com
+                </a>
               </div>
               <div className="flex items-center space-x-2">
-                <img src="/icons/phone-call.png" alt="Phone" className="w-5 h-5" />
-                <span className="hidden sm:inline" style={{ fontSize: '0.95rem' }}>+971 567 455 488</span>
+                <a href="tel:+971567455488">
+                  <img src="/icons/phone-call.png" alt="Phone" className="w-5 h-5" />
+                </a>
+                <a href="tel:+971567455488" className="hidden sm:inline text-white" style={{ fontSize: '0.95rem' }}>
+                  +971 567 455 488
+                </a>
               </div>
             </div>
 
@@ -321,14 +389,16 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu */}
-          <div className={`md:hidden flex flex-col text-center space-y-4 mt-2 transition-all duration-1000 ${isOpen ? 'opacity-100 max-h-full' : 'opacity-0 max-h-0 overflow-hidden'}`}>
-            <Link href="/" className="text-gray-700 mt-2 hover:text-blue-600 no-underline">Home</Link>
-            <Link href="/products" className="text-gray-700 hover:text-blue-600 no-underline">Products</Link>
-            <Link href="/applications" className="text-gray-700 hover:text-blue-600 no-underline" >Applications</Link>
-            <Link href="/#about" className="text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
-            <Link href="/#contact" className="text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
-            <Link href="/blog" className="text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
-          </div>
+          {isOpen && (
+            <div className="md:hidden mt-2 space-y-2">
+              <Link href="/" className="block text-gray-700 hover:text-blue-600 no-underline">Home</Link>
+              <Link href="/products" className="block text-gray-700 hover:text-blue-600 no-underline">Products</Link>
+              <Link href="/applications" className="block text-gray-700 hover:text-blue-600 no-underline">Applications</Link>
+              <Link href="/#about" className="block text-gray-700 hover:text-blue-600 no-underline">About Us</Link>
+              <Link href="/#contact" className="block text-gray-700 hover:text-blue-600 no-underline">Contact Us</Link>
+              <Link href="/blog" className="block text-gray-700 hover:text-blue-600 no-underline">Blog</Link>
+            </div>
+          )}
         </div>
       </nav>
     </>
