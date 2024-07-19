@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase"; // Adjust the path as needed
@@ -46,16 +46,27 @@ const ContactUs = () => {
               id="resContactText"
               className="w-full align-center justify-center text-center lg:w-1/2 mb-8 lg:mb-0"
             >
-              <h2 className="text-2xl text-blue-500 font-bold mb-4">XRF Analyzer Middle East</h2>
+              <h2 className="text-2xl text-blue-500 font-bold mb-4">
+                XRF Analyzer Middle East
+              </h2>
               <p className="mb-4">
                 We&apos;d love to hear from you! Please fill out the form on the
                 right to get in touch with us.
               </p>
               <p className="mb-4">
-                Address: XRF Analyzer Middle East International Business Tower,
-                Al Amaal Street Business Bay, Dubai-UAE
+                Address: International Business Tower, Al Amaal Street Business
+                Bay, Dubai-UAE
               </p>
-              <p className="mb-4">Phone: +971 567 455 488</p>
+              <p className="mb-4">
+                Phone:{" "}
+                <a
+                  href="tel:+971567455488"
+                  className="hidden sm:inline"
+                  style={{ fontSize: "0.95rem" }}
+                >
+                  +971 567 455 488
+                </a>
+              </p>
               <p>
                 Email:{" "}
                 <a
