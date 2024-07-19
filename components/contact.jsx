@@ -61,7 +61,7 @@ const ContactUs = () => {
                 Phone:{" "}
                 <a
                   href="tel:+971567455488"
-                  className="hidden sm:inline"
+                  className="text-blue-500 underline"
                   style={{ fontSize: "0.95rem" }}
                 >
                   +971 567 455 488
