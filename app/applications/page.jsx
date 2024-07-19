@@ -43,7 +43,7 @@ export default function ApplicationsPage() {
     <>
       <Navbar />
       <div className="container mx-auto px-4 py-12 bg-white">
-        <h1 className="text-5xl font-bold mb-12 text-center text-blue-600">Product Applications</h1>
+        <h1 className="text-5xl font-bold mb-12 text-center text-blue-600">Applications</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {applications.map((application) => (
             <div key={application.id} className="group border p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white flex flex-col">
