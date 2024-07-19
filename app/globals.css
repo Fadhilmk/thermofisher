@@ -33,3 +33,15 @@ body {
 }
 
 
+/* Ensure the label stays on one line */
+.table-cell-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Allow the value to wrap and break into multiple lines */
+.table-cell-value {
+  white-space: normal;
+  word-break: break-word;
+}
