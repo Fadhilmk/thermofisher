@@ -58,7 +58,7 @@ export default function Page() {
         <h1 className="text-2xl font-bold mb-8">All Products</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <div key={product.id} onClick={() => router.push(`/product/${product.id}`)}  className="border p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-200 bg-white">
+            <div key={product.id} onClick={() => router.push(`/product/${product.id}`)}  className="border p-4 rounded-lg shadow hover:shadow-lg transition-shadow duration-200 bg-white cursor-pointer">
               <img 
                 src={product.image} 
                 alt={product.name} 

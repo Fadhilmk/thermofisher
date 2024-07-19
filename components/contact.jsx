@@ -46,13 +46,14 @@ const ContactUs = () => {
               id="resContactText"
               className="w-full align-center justify-center text-center lg:w-1/2 mb-8 lg:mb-0"
             >
-              <h2 className="text-2xl text-blue-500 font-bold mb-4">
-                XRF Analyzer Middle East
-              </h2>
+             
               <p className="mb-4">
                 We&apos;d love to hear from you! Please fill out the form on the
                 right to get in touch with us.
               </p>
+              <h2 className="text-2xl text-blue-500 font-bold mb-4">
+                XRF Analyzer Middle East
+              </h2>
               <p className="mb-4">
                 Address: International Business Tower, Al Amaal Street Business
                 Bay, Dubai-UAE
