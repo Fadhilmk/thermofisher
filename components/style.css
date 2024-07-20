@@ -99,3 +99,77 @@
         object-fit: cover;
     }
 }
+
+/* Skeleton Card Styles */
+.skeleton-card {
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 8px;
+    background: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .skeleton-image {
+    width: 100%;
+    height: 200px;
+    background: #ccc;
+    border-radius: 8px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-title {
+    width: 60%;
+    height: 20px;
+    background: #ccc;
+    margin-top: 16px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .skeleton-text {
+    width: 40%;
+    height: 15px;
+    background: #ccc;
+    margin-top: 8px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  /* Skeleton Carousel Styles */
+  .skeleton-carousel {
+    width: 100%;
+    height: 350px; /* Default height */
+    background: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .skeleton-carousal-image {
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  /* Keyframes for Animation */
+  @keyframes pulse {
+    0% {
+      background-color: #e0e0e0;
+    }
+    50% {
+      background-color: #f0f0f0;
+    }
+    100% {
+      background-color: #e0e0e0;
+    }
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 767px) {
+    .skeleton-carousel {
+      height: 150px; /* Reduced height for mobile devices */
+    }
+  }
+  
