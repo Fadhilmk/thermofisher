@@ -529,6 +529,7 @@ const Navbar = () => {
                   width={90}
                   height={90}
                   className="object-contain"
+                  priority
                 />
               </Link>
             </div>
