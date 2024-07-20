@@ -18,7 +18,7 @@ const FeaturedApplications = () => {
         const querySnapshot = await getDocs(applicationsRef);
         const applicationsData = querySnapshot.docs
           .map(doc => ({ id: doc.id, ...doc.data() }))
-          .slice(0, 4); // Adjust the number to show 4 applications
+          .slice(0, 4); 
 
         setFeaturedApplications(applicationsData);
       } catch (error) {

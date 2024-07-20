@@ -84,10 +84,10 @@
     .resSearchBarMob{
         display: flex;
         width: 95%;
-        justify-content: center;  /* equivalent to justify-center */
-        flex-grow: 1;  /* equivalent to flex-grow */
-        margin-left: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25rem = 2rem) */
-        margin-right: 1rem;  /* equivalent to mx-8 (for large screen sizes, 8 * 0.25r} */
+        justify-content: center;  
+        flex-grow: 1;  
+        margin-left: 1rem;  
+        margin-right: 1rem;  
     }
     .search-bar-width-mob{
         width: 280px;

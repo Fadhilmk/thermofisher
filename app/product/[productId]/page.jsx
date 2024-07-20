@@ -362,8 +362,8 @@ export default function ProductDetailPage() {
 
 const TableRow = ({ label, value }) => (
   <tr>
-    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{label}</td>
-    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{value}</td>
+    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 table-cell-label">{label}</td>
+    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 table-cell-value">{value}</td>
   </tr>
 );
 

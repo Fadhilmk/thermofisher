@@ -15,22 +15,21 @@ const FeaturedProducts = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // Reference to the 'products' collection
+        
         const productsRef = collection(db, 'products');
         
-        // Reference to the 'featured' document inside the 'products' collection
+        
         const featuredDocRef = doc(productsRef, 'featured');
         
-        // Reference to the 'featured-product' subcollection inside the 'featured' document
         const featuredProductsRef = collection(featuredDocRef, 'featured-products');
         
-        // Query to get all documents in the 'featured-product' subcollection
+        
         const querySnapshot = await getDocs(featuredProductsRef);
         
-        // Map the documents to get the data along with their IDs
+        
         const productsData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         
-        // Set the products data to the state
+        
         setProducts(productsData);
       } catch (error) {
         console.error('Error fetching products:', error);

@@ -520,7 +520,7 @@ const Navbar = () => {
             className="flex h-20"
             style={{ alignItems: "center", justifyContent: "space-between" }}
           >
-            {/* Left Section for Logo */}
+  
             <div className="flex items-center">
               <Link href="/">
                 <Image
@@ -534,7 +534,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Center Section for Search Bar */}
+            
             <div className="hidden lg:flex items-center flex-grow mx-8 justify-center relative">
               <input
                 type="text"
@@ -569,7 +569,7 @@ const Navbar = () => {
               )}
             </div>
 
-            {/* Right Section for Nav Links */}
+            
             <div className="hidden md:flex items-center space-x-4 ml-auto">
               <Link
                 href="/"
@@ -609,7 +609,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            
             <div className="md:hidden">
               <button
                 onClick={toggleMenu}
@@ -635,7 +635,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Search Bar */}
+         
           <div className="flex lg:hidden items-center justify-center mt-2 relative">
             <input
               type="text"
@@ -670,7 +670,7 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile Menu */}
+          
           <div
             className={`md:hidden flex flex-col text-center space-y-4 mt-2 transition-all duration-1000 ${
               isOpen
