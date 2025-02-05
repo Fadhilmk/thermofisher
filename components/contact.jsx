@@ -58,16 +58,6 @@ const ContactUs = () => {
                 Address: International Business Tower, Al Amaal Street Business
                 Bay, Dubai-UAE
               </p>
-              <p className="mb-4">
-                Phone:{" "}
-                <a
-                  href="tel:+971567455488"
-                  className="text-blue-500 underline"
-                  style={{ fontSize: "0.95rem" }}
-                >
-                  +971 567 455 488
-                </a>
-              </p>
               <p>
                 Email:{" "}
                 <a
