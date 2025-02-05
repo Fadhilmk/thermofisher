@@ -439,22 +439,6 @@ const Navbar = () => {
                   xrfanalyzermiddleeast@gmail.com
                 </a>
               </div>
-              <div className="flex items-center space-x-2">
-                <a href="tel:+971567455488">
-                  <img
-                    src="/icons/phone-call.png"
-                    alt="Phone"
-                    className="w-5 h-5"
-                  />
-                </a>
-                <a
-                  href="tel:+971567455488"
-                  className="hidden sm:inline text-white"
-                  style={{ fontSize: "0.95rem" }}
-                >
-                  +971 567 455 488
-                </a>
-              </div>
             </div>
 
             {/* Right Section */}
